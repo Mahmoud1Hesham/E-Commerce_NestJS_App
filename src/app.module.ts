@@ -6,11 +6,12 @@ import { ConfigModule } from '@nestjs/config';
 import { resolve } from 'node:path';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './modules/user/user.module';
+import { CategoryModule } from './modules/category/category.module';
 
 @Module({
   imports: [ConfigModule.forRoot({ envFilePath: resolve('./config/.env.dev'), isGlobal: true }),
     MongooseModule.forRoot(process.env.DB_URI as unknown as any)
-    , AuthenticationModule , UserModule],
+    , AuthenticationModule , UserModule,CategoryModule],
   controllers: [AppController],
   providers: [AppService],
 })

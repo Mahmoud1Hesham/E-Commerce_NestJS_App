@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { UserDocument } from 'src/DB/model/User.model';
 
 @Injectable()
 export class UserService {
@@ -7,8 +8,9 @@ export class UserService {
 
 
 
-profile(){
-    return
-}
+    profile(user: UserDocument) {
+
+        return { message: "Done", data: { user } }
+    }
 
 }

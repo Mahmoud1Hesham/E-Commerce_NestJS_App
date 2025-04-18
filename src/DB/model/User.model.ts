@@ -40,6 +40,8 @@ export class User {
     @Prop({ type: Date })
     DOB: Date;
     @Prop({ type: Date })
+    changeCredentialTime: Date;
+    @Prop({ type: Date })
     confirmEmail: Date;
     @Prop({})
     confirmEmailOTP: string;
